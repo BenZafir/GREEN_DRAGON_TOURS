@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN DRAGON TOURS</title>
+    <link rel="stylesheet" href="/static/css/homepage/homepage_style.css">
+    <link rel="icon" href="/static/logo/icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img src="/static/logo/icon.png" alt="Green Dragon Tours Logo" class="logo">
+        <h1>GREEN DRAGON TOURS</h1>
+    </header>
+
+    <div class="gallery">
+        <a href="destination/china" class="destination">
+            <video src="/static/video/china.mp4" muted></video>
+            <div class="overlay">China</div>
+        </a>
+        <a href="destination/korea" class="destination">
+            <video src="/static/video/korea.mp4" muted></video>
+            <div class="overlay">Korea</div>
+        </a>
+        <a href="destination/japan" class="destination">
+            <video src="/static/video/japan.mp4" muted></video>
+            <div class="overlay">Japan</div>
+        </a>
+        <a href="destination/thailand" class="destination">
+            <video src="/static/video/thailand.mp4" muted></video>
+            <div class="overlay">Thailand</div>
+        </a>
+        <a href="destination/vietnam" class="destination">
+            <video src="/static/video/vietnam.mp4" muted></video>
+            <div class="overlay">Vietnam</div>
+        </a>
+        <a href="destination/bali" class="destination">
+            <video src="/static/video/bali.mp4" muted></video>
+            <div class="overlay">Bali</div>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript to handle autoplay on hover
+        document.querySelectorAll('.destination video').forEach(video => {
+            video.addEventListener('mouseover', function() {
+                video.play();
+            });
+
+            video.addEventListener('mouseout', function() {
+                video.pause();
+                video.currentTime = 0; // Reset to the start
+            });
+        });
+    </script>
+</body>
+</html>

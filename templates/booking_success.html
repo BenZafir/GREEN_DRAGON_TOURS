@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Success</title>
+    <link rel="stylesheet" href="/static/css/booking_success/booking_success.css">
+    <link rel="icon" href="/static/logo/icon.png" type="image/png">
+</head>
+<body>
+    <div id="confetti-canvas"></div>
+    <div class="ticket">
+        <div class="ticket-header">
+            <img src="/static/logo/icon.png" alt="Green Dragon Tours Logo" class="logo">
+            <h1>GREEN DRAGON TOURS</h1>
+        </div>
+        <div class="ticket-body">
+            <div class="ticket-info">
+                <p><strong>Passenger:</strong> {{ name }}</p>
+                <p><strong>Destination:</strong> {{ destination_name | capitalize }}</p>
+                <p><strong>Start Date:</strong> {{ start_date }}</p>
+                <p><strong>End Date:</strong> {{ end_date }}</p>
+            </div>
+            <div class="ticket-footer">
+                <p class="congrats">Congratulations on booking your trip!</p>
+            </div>
+        </div>
+        <a href="/" class="home-button">Go back to Home</a>
+    </div>
+
+    <audio id="clapSound" autoplay>
+        <source src="/static/sounds/claps.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Confetti settings
+        const end = Date.now() + (5 * 1000);
+
+        const confettiInterval = setInterval(function() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 }
+            });
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 }
+            });
+
+            if (Date.now() > end) {
+                clearInterval(confettiInterval);
+            }
+        }, 200);
+    </script>
+</body>
+</html>

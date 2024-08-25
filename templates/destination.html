@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination: {{ destination_name | capitalize }}</title>
+    <link rel="stylesheet" href="/static/css/destination/destination_style.css">
+    <link rel="icon" href="/static/logo/icon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ destination_name | capitalize }}</h1>
+        </header>
+
+        <section class="info">
+            <h2>About the Trip to {{ destination_name | capitalize }}</h2>
+            <p>
+                No money left after your last adventure? No worries! GREEN DRAGON TOURS has you covered with an incredible opportunity to book your dream trip to {{ destination_name }} absolutely FREE! Don’t wait — grab this chance!
+            </p>
+        </section>
+
+        <section class="booking">
+            <h2>Book Your Trip to {{ destination_name | capitalize }}</h2>
+            <form action="\book" method="post" class="booking-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="start-date">Choose Your Start Date:</label>
+                <input type="date" id="start-date" name="start_date" required>
+
+                <label for="end-date">Choose Your End Date:</label>
+                <input type="date" id="end-date" name="end_date" required>
+
+
+                <input type="hidden" name="destination_name" value="{{ destination_name }}">
+
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+<section class="previous-bookings">
+    <h2>Previous Bookings for {{ destination_name | capitalize }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.name }}</td>
+                <td>{{ booking.start_date }}</td>
+                <td>{{ booking.end_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+    </div>
+</body>
+</html>

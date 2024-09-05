@@ -1,0 +1,105 @@
+/* Basic styling for the body */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+/* Styling the ticket */
+.ticket {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ticket header with logo and title */
+.ticket-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.ticket-header .logo {
+    max-width: 50px;
+    margin-right: 15px;
+}
+
+.ticket-header h1 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin: 0;
+}
+
+/* Ticket body with passenger details */
+.ticket-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ticket-info p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.ticket-footer {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ticket-footer .congrats {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Styling the home button */
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.home-button:hover {
+    background-color: #45a049;
+}
+
+/* Animation for ticket appearance */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

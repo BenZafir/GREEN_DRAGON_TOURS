@@ -2,7 +2,10 @@ from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
+from flask_frozen import Freezer
+
 app = Flask(__name__)
+freezer = Freezer(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 migarte = Migrate(app, db)

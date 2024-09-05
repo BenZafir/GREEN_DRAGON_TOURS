@@ -1,0 +1,70 @@
+/* Styles for the header with the logo and title */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.logo {
+    max-width: 50px; /* Adjust size as needed */
+    margin-right: 15px; /* Space between the logo and the heading */
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 300;
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* Styles for the gallery and videos */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 10px;
+    margin: 20px;
+}
+
+.destination {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners for a modern touch */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+    pointer-events: none; /* Ensures video does not intercept clicks */
+}
+
+.destination:hover video {
+    transform: scale(1.05); /* Slight zoom on hover for a dynamic feel */
+    pointer-events: auto; /* Enables video control on hover */
+    autoplay: true;
+    loop: true;
+}
+
+.destination .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.destination:hover .overlay {
+    opacity: 1;
+}
